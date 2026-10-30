@@ -191,8 +191,7 @@
                         <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                             <Label text="{i18n>FirstMissedShift1}" design="Bold" />
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
-                           <Label text="{i18n>FirstMissedShift1}" design="Bold" />
-                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+                         
                             <Label text="{i18n>DateofInjuryIllness2}" design="Bold" required="true"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
 
@@ -265,7 +264,36 @@
             <!--<core:Fragment fragmentName="sls.dsm.crclm.SLS_DSM_SLS_CRCLM_ALL.view.WL_IconTab_Fragments.ClaimType_Fragments. " type="XML"/>-->
 
         </Panel>
+ <Panel id="_id_CLMTY_5" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=${worklistView>/ClaimDetails/CLMTY} === '5'}">
 
+            <headerToolbar>
+                    <Toolbar >
+                    <Title  text="{i18n>Occupational}"/>
+                    <ToolbarSpacer />
+                </Toolbar>
+            </headerToolbar>
+            <l:BlockLayout id="_IDGenBlockLayout5" background="Dashboard">
+                <l:BlockLayoutRow id="_IDGenBlockLayoutRow5" class="sapUiNoContentPadding sapUiNoMargin">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" visible="true">
+    <f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="true" editable="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true">
+                            <Label text="{i18n>ReturntoModifiedWorkDate}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>ActualReturnDate}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+                            <Label text="{i18n>TypeofReturntoWork}" design="Bold"/>
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
+
+
+
+                            <f:content/>
+                        </f:SimpleForm>
+              </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+
+            </l:BlockLayout>
+            </Panel>
        
     </VBox>
 </core:FragmentDefinition>
