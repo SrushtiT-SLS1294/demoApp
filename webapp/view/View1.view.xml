@@ -21,6 +21,7 @@
                         <core:Item key="3" text="Medical Accomodation"/>
                         <core:Item key="4" text="Unpaid Leaves"/>
 						<core:Item key="5" text="Occupational Claim"/>
+								<core:Item key="6" text="Non - Occupational Claim"/>
 						<layoutData>
 							<l:GridData span="XL4 L4 M4 S11"/>
 						</layoutData>
