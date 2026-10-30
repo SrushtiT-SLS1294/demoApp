@@ -10,7 +10,7 @@
 
         <!--********************************* RERPOTED BY DETAILS STARTS ***************************-->
         <!-- CASE MANAGER DETAILS STARTS -->
-        <Panel id="_IDGenPanel1" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{= ${MASTER_MODEL>/isSTDSelected} || ${MASTER_MODEL>/isMEDICALACCOMODATIONSELECTED} || ${MASTER_MODEL>/isUNPAIDMLEAVESELECTED} }">
+        <Panel id="_IDGenPanel1" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{= ${MASTER_MODEL>/isSTDSelected}  || ${MASTER_MODEL>/isUNPAIDMLEAVESELECTED} }">
                     <headerToolbar>
                 <Toolbar id="_IDGenToolbar1">
                     <Title id="_IDGenTitle" text="Case Manager Details"/>
@@ -182,7 +182,7 @@
             <headerToolbar>
                     <Toolbar >
                     <Title  text="{i18n>LongTermDisabilitySTD}"/>
-                    <ToolbarSpacer />
+                    <ToolbarSpacer />  
                 </Toolbar>
             </headerToolbar>
             <l:BlockLayout id="_IDGenBlockLayout3" background="Dashboard">
@@ -191,7 +191,8 @@
                         <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" editable="true" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
                             <Label text="{i18n>FirstMissedShift1}" design="Bold" />
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
-
+                           <Label text="{i18n>FirstMissedShift1}" design="Bold" />
+                            <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
                             <Label text="{i18n>DateofInjuryIllness2}" design="Bold" required="true"/>
                             <Input value="{MASTER_MODEL>/ClaimDetails/TEMNM}" maxLength="500" name="true" editable="true"/>
 
@@ -236,7 +237,34 @@
             <!--<core:Fragment fragmentName="sls.dsm.crclm.SLS_DSM_SLS_CRCLM_ALL.view.WL_IconTab_Fragments.ClaimType_Fragments. " type="XML"/>-->
 
         </Panel>
-    
+        <!-- M ACCO -->
+     <Panel id="_id_CLMTY_3" expandable="true" expanded="true" expand="Step1Expend" width="auto" class="sapUiNoContentPadding sapUiNoMargin" visible="{=${worklistView>/ClaimDetails/CLMTY} === '3'}">
+
+            <headerToolbar>
+                    <Toolbar >
+                    <Title  text="{i18n>Medical Accomodation}"/>
+                    <ToolbarSpacer />
+                </Toolbar>
+            </headerToolbar>
+            <l:BlockLayout>
+                   <l:BlockLayoutRow  class="sapUiNoContentPadding sapUiNoMargin">
+                    <l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD" id="_id_TITLE1_CELL4" visible="true">
+                        <f:SimpleForm  layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" editable="true" singleContainerFullSize="false">
+
+                            <f:content>
+                                <Label text="{i18n>DescriptionofInjuryIllness}" design="Bold" required="true"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
+
+                                <Label text="{i18n>Notes}" design="Bold" required="true"/>
+                                <TextArea value="{MASTER_MODEL>/ClaimDetails/TEMNM}" placeholder="{i18n>MaxCharLimit5000}" maxLength="5000" width="100%" rows="3"/>
+                            </f:content>
+                        </f:SimpleForm>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+            <!--<core:Fragment fragmentName="sls.dsm.crclm.SLS_DSM_SLS_CRCLM_ALL.view.WL_IconTab_Fragments.ClaimType_Fragments. " type="XML"/>-->
+
+        </Panel>
 
        
     </VBox>
